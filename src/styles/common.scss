@@ -1,0 +1,84 @@
+.flex{
+  display: flex;
+}
+.bg_blur{
+  position: relative;
+  background-color: rgba(255,255,255,0.04);
+  &::after{
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    backdrop-filter:blur(9px);
+  }
+}
+@mixin confirm-btn{
+  background: linear-gradient(315deg,#07b2ff, #037aff);
+  color: #FFF;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  &:hover{
+    color: #FFF;
+    background: linear-gradient(315deg,rgba($color:#07b2ff, $alpha:0.8), rgba($color:#037aff, $alpha:0.8));
+  }
+  &:focus{
+    color: #FFF;
+    background: linear-gradient(315deg,rgba($color:#07b2ff, $alpha:0.8), rgba($color:#037aff, $alpha:0.8));
+  }
+}
+@mixin cancel-btn {
+  background: #F6F6F6;
+  padding: 0;
+  text-align: center;
+  border:none;
+  color: #666666;
+  border-radius: 4px;
+  &:hover{
+    color: #666666;
+  }
+}
+@mixin delete-btn{
+  background-color: #EB3C3C;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0;
+  &:hover{
+    background-color: rgba($color: #EB3C3C, $alpha: 0.8);
+    color: #fff;
+  } 
+  &:focus{
+    background-color: rgba($color: #EB3C3C, $alpha: 0.8);
+    color: #fff;
+  }
+}
+.login-btn{
+  @include confirm-btn;
+  width: 100%;
+  font-size: 18px;
+  padding: 0;
+}
+.register-btn{
+  width: 100%;
+  font-size: 18px;
+}
+.table-delete-btn{
+  @include delete-btn;
+  width: 108px;
+  height: 32px;
+  line-height: 32px;
+}
+.table-add-btn{
+  width: 108px;
+  height: 32px;
+  line-height: 32px;
+  @include confirm-btn;
+}
