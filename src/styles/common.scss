@@ -60,16 +60,6 @@
     color: #fff;
   }
 }
-.login-btn{
-  @include confirm-btn;
-  width: 100%;
-  font-size: 18px;
-  padding: 0;
-}
-.register-btn{
-  width: 100%;
-  font-size: 18px;
-}
 .table-delete-btn{
   @include delete-btn;
   width: 108px;
